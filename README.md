@@ -39,11 +39,24 @@ sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
 ```
 
 
-## install Nvidia drivers
-```
+## Install Nvidia drivers
+```bash
 sudo apt install nvidia-driver-515-server -y
 
 nvidia-smi
+
+sudo shudown -r now
+```
+
+### Troubleshooting
+
+```bash
+sudo apt-get install -y nvidia-container-toolkit
+```
+
+Might need to purge snap version of docker. Just running this fixed it for me I think. 
+```bash
+sudo snap remove --purge docker
 ```
 
 ## Run
