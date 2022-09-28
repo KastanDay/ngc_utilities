@@ -48,6 +48,10 @@ nvidia-smi
 sudo shudown -r now
 ```
 
+For other versions, use `sudo apt search nvidia-driver`. 
+
+I recommend the `server` version (or `server-headless` for headless machines) because it's more stable, slower updates. Used in industry. 
+
 ### Troubleshooting
 
 ```bash
