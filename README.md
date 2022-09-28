@@ -35,9 +35,12 @@ sudo apt-get update; \
   sudo systemctl restart docker
 ```
 
-Test it:
+Test that it works (warning: 5GB+ download).
 ```
+# test with ubuntu & cuda 11.0.3
 sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+# or test with pytorch and cuda 11.7. See the doc links at top of this readme.
+sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 nvcr.io/nvidia/pytorch:22.08-py3 nvidia-smi
 ```
 
 
@@ -67,13 +70,13 @@ sudo snap remove --purge docker
 
 ## Run
 
-
+For testing (run `nvidia-smi`)
 ```bash
-echo "BEST DOCKER PYTORCH COMMAND";
 sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 nvcr.io/nvidia/pytorch:22.08-py3 nvidia-smi
 ```
-
+For interactive use (run `bash`):
 Running with local dirs mounted with `-v`. Use custom images with `-t`, get interactive access with `-i/--interactive`. 
 ```bash
+# note this is using container named -t ngc_alpa
 sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v /home/kastan/ai/alpa:/workspace/alpa --interactive -t ngc_alpa bash
 ```
