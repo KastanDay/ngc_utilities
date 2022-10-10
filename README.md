@@ -46,7 +46,7 @@ sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=6710886
 
 ## Install Nvidia drivers
 ```bash
-sudo apt install nvidia-driver-515-server -y
+sudo apt install nvidia-headless-515-server -y
 
 nvidia-smi
 
