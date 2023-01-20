@@ -87,4 +87,8 @@ Lovelace (`compute_89`) requires Cuda 11.8 and later. Pytorch is not yet distrib
  sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it -v /home/kastan/alexa/:/workspace nvcr.io/nvidia/pytorch:22.12-py3 bash
 ```
 
-TODO: Write docs on taking snapshot of running image. 
+Install your packages, then make a commit/snapshot to save changes.
+
+```bash
+docker commit -a "Kastan Day" -m "Commit message" container_name new_image_name:tag
+```
