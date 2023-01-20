@@ -1,7 +1,7 @@
 # ngc_utilities
 Nice starting points for using Nvidia NGC images on Ubuntu. Perfect PyTorch, more reproducible.
 
-⭐️ List of all containers: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/
+⭐️ List of all containers: https://catalog.ngc.nvidia.com/containers (requires Developer account)
 
 ## Install Docs
 
