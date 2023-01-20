@@ -80,3 +80,11 @@ Running with local dirs mounted with `-v`. Use custom images with `-t`, get inte
 # note this is using container named -t ngc_alpa
 sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v /home/kastan/ai/alpa:/workspace/alpa --interactive -t ngc_alpa bash
 ```
+
+## 4090 Pytorch Compatability 
+Lovelace (`compute_89`) requires Cuda 11.8 and later. Pytorch is not yet distributed with 11.8 (latest is 11.7), so we use NGC containers to get around it. 
+```bash
+ sudo docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it -v /home/kastan/alexa/:/workspace nvcr.io/nvidia/pytorch:22.11-py3 bash
+```
+
+TODO: Write docs on taking snapshot of running image. 
